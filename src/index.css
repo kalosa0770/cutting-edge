@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vintage-cream: #faf6e4;  /* Primary background canvas */
+  --color-vintage-green: #183634;  /* Deep forest green for main headers & branding */
+  --color-vintage-dark: #000000;   /* Rich black for typography */
+  --color-vintage-white: #ffffff;  /* Pure white for pristine card surfaces */
+  
+  --font-display: "Playfair Display", serif;
+  --font-body: "Montserrat Regular", serif;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("./assets/fonts/CascadiaCode-Regular.ttf");
+}  @font-face {
+  font-family: "Montserrat Regular";
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
+@layer utilities {
+  /* Vintage border layout style matching the profile frames */
+  .vintage-frame {
+    border: 2px solid var(--color-vintage-green);
+    outline: 1px solid var(--color-vintage-green);
+    outline-offset: -5px;
+  }
+}
+
+body {
+  background-color: var(--color-vintage-cream);
+  color: var(--color-vintage-dark);
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+}
