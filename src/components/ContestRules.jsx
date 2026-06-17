@@ -1,9 +1,8 @@
-import { useRef, useState, useEffect } from "react";
-import { motion, useScroll } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ListChecks, AlertCircle, Scale, ShieldCheck } from "lucide-react";
 
 export default function ContestRules() {
-  const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   const rules = [
@@ -51,27 +50,11 @@ export default function ContestRules() {
     }
   ];
 
-  // Monitor total vertical scrolling distance to map slide intervals seamlessly
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      const count = rules.length;
-      // Map scroll bounds smoothly to our 7 independent slides
-      const currentSection = Math.min(Math.floor(latest * count), count - 1);
-      setActiveIndex(currentSection);
-    });
-  }, [scrollYProgress, rules.length]);
-
   return (
-    /* h-[500vh] provides premium, comfortable scrolling pacing to comfortably cycle through each view */
-    <div ref={containerRef} className="relative h-[500vh] bg-[#faf6e4]">
+    <section id="rules" className="relative bg-[#faf6e4] text-[#183634] py-24 px-6 md:px-16 overflow-hidden">
       
       {/* ⏳ MULTIPLIED LARGE SANDY TEXTURE LAYER */}
-      <div className="sticky top-0 h-screen w-full opacity-[0.25] mix-blend-multiply pointer-events-none z-0">
+      <div className="absolute inset-0 opacity-[0.25] mix-blend-multiply pointer-events-none z-0">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <filter id="rulesVerticalSandyNoise">
             <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="4" stitchTiles="stitch" />
@@ -82,92 +65,109 @@ export default function ContestRules() {
       </div>
 
       {/* ========================================================= */}
-      {/* LOCKED VIEWPORT BOX FOR CARD CYCLING                     */}
+      {/* STANDARD GRID WORKSPACE (NO SCROLL BRAKES OR MOVING PARTS) */}
       {/* ========================================================= */}
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center px-6 md:px-16 z-10 overflow-hidden">
-        <div className="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left Layout Information Block */}
-          <div className="lg:col-span-5 space-y-4 md:space-y-6">
-            <div className="space-y-1 md:space-y-2">
-              <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-[#183634] leading-none">
-                Know Before <br />
-                You Register
-              </h2>
-            </div>
-            <p className="font-body text-base md:text-lg text-[#000000]/60 leading-relaxed text-justify">
-              Please review the official operational ledger thoroughly. Infractions against event procedures run the immediate penalty of performance disqualification.
+      <div className="max-w-5xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+        
+        {/* Left Side: Completely Stationary Typography */}
+        <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-24">
+          <div className="space-y-1 md:space-y-2">
+            <p className="font-body italic text-[#183634] font-semibold text-lg md:text-xl tracking-wider">
+              03 / Directives Ledger
             </p>
+            <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-[#183634] leading-none">
+              Know Before <br />
+              You Register
+            </h2>
+          </div>
+          <p className="font-body text-base md:text-lg text-[#000000]/60 leading-relaxed text-justify">
+            Please review the official operational ledger thoroughly. Infractions against event procedures run the immediate penalty of performance disqualification.
+          </p>
 
-            {/* Progressive Slide Indicators HUD */}
-            <div className="flex items-center gap-3 pt-4 border-t border-[#183634]/10 max-w-xs">
-              <span className="font-display font-black text-sm text-[#183634]">
-                {rules[activeIndex].num}
-              </span>
-              <div className="flex items-center gap-1.5 flex-1 justify-center">
-                {rules.map((_, dotIdx) => (
-                  <div 
-                    key={dotIdx}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      dotIdx === activeIndex ? "w-6 bg-[#183634]" : "w-1.5 bg-[#183634]/10"
-                    }`}
-                  />
-                ))}
-              </div>
-              <span className="font-body font-bold text-xs text-[#000000]/40">
-                / 07
-              </span>
+          {/* Static Progressive Indicators Hud (Clickable tabs to quickly flip through if users prefer manual interaction) */}
+          <div className="flex items-center gap-3 pt-4 border-t border-[#183634]/10 max-w-xs">
+            <span className="font-display font-black text-sm text-[#183634]">
+              {rules[activeIndex].num}
+            </span>
+            <div className="flex items-center gap-1.5 flex-1 justify-center">
+              {rules.map((_, dotIdx) => (
+                <button 
+                  key={dotIdx}
+                  onClick={() => setActiveIndex(dotIdx)}
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    dotIdx === activeIndex ? "w-6 bg-[#183634]" : "w-1.5 bg-[#183634]/10 hover:bg-[#183634]/30"
+                  }`}
+                  aria-label={`View Rule ${dotIdx + 1}`}
+                />
+              ))}
             </div>
+            <span className="font-body font-bold text-xs text-[#000000]/40">
+              / 07
+            </span>
           </div>
-
-          {/* Right Layout: Rigid Single Card Stage Window Container */}
-          <div className="lg:col-span-7 relative h-[280px] sm:h-[220px] md:h-[200px] w-full flex items-center justify-center">
-            {rules.map((rule, idx) => {
-              const isCurrent = idx === activeIndex;
-              const isPast = idx < activeIndex;
-
-              return (
-                <motion.div
-                  key={idx}
-                  initial={idx === 0 ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 100 }}
-                  animate={{ 
-                    opacity: isCurrent ? 1 : 0,
-                    y: isCurrent ? 0 : isPast ? -150 : 150,
-                    scale: isCurrent ? 1 : 0.95
-                  }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
-                  className="absolute w-full bg-white p-6 md:p-8 rounded-xs border border-[#183634]/10 shadow-[0_20px_40px_rgba(24,54,52,0.05)] flex gap-4 md:gap-6 items-start select-none"
-                  style={{ 
-                    zIndex: isCurrent ? 20 : 10,
-                    pointerEvents: isCurrent ? "auto" : "none"
-                  }}
-                >
-                  {/* Visual Category Identification Marker Stack */}
-                  <div className="flex flex-col items-center gap-2">
-                    <span className="font-display text-xl md:text-2xl font-black text-[#183634]/30">
-                      {rule.num}
-                    </span>
-                    <div className="p-2 bg-[#183634] rounded-full text-white shadow-xs">
-                      {rule.icon}
-                    </div>
-                  </div>
-
-                  {/* Narrative Body Elements */}
-                  <div className="space-y-1.5 flex-1">
-                    <h3 className="font-display text-lg md:text-xl font-bold uppercase tracking-tight text-[#183634]">
-                      {rule.title}
-                    </h3>
-                    <p className="font-body text-base md:text-lg text-[#000000]/80 leading-relaxed text-justify">
-                      {rule.body}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
         </div>
+
+        {/* Right Side: Clean Workspace Container with Instant Tab Selection Layout */}
+        <div className="lg:col-span-7 w-full space-y-4">
+          <div className="relative min-h-[220px] sm:min-h-[180px] w-full flex items-center justify-center bg-white rounded-xs border border-[#183634]/10 shadow-[0_20px_40px_rgba(24,54,52,0.03)] p-6 md:p-8">
+            <AnimatePresence mode="wait">
+              {rules.map((rule, idx) => {
+                if (idx !== activeIndex) return null;
+
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="w-full flex gap-4 md:gap-6 items-start select-none"
+                  >
+                    {/* Visual Category Identification Marker Stack */}
+                    <div className="flex flex-col items-center gap-2 flex-shrink-0">
+                      <span className="font-display text-xl md:text-2xl font-black text-[#183634]/30">
+                        {rule.num}
+                      </span>
+                      <div className="p-2 bg-[#183634] rounded-full text-white shadow-xs">
+                        {rule.icon}
+                      </div>
+                    </div>
+
+                    {/* Narrative Body Elements */}
+                    <div className="space-y-1.5 flex-1 min-w-0">
+                      <h3 className="font-display text-lg md:text-xl font-bold uppercase tracking-tight text-[#183634]">
+                        {rule.title}
+                      </h3>
+                      <p className="font-body text-sm sm:text-base md:text-lg text-[#000000]/80 leading-relaxed text-justify">
+                        {rule.body}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+
+          {/* Secondary manual slide trigger layout buttons */}
+          <div className="flex justify-between items-center px-1">
+            <button 
+              disabled={activeIndex === 0}
+              onClick={() => setActiveIndex(prev => prev - 1)}
+              className="text-xs font-bold tracking-wider uppercase text-[#183634]/50 hover:text-[#183634] disabled:opacity-20 disabled:pointer-events-none transition-colors cursor-pointer"
+            >
+              &larr; Prev Rule
+            </button>
+            <button 
+              disabled={activeIndex === rules.length - 1}
+              onClick={() => setActiveIndex(prev => prev + 1)}
+              className="text-xs font-bold tracking-wider uppercase text-[#183634] hover:text-[#183634]/70 disabled:opacity-20 disabled:pointer-events-none transition-colors cursor-pointer"
+            >
+              Next Rule &rarr;
+            </button>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </section>
   );
 }

@@ -50,7 +50,7 @@ export default function HeroSection() {
         </div>
 
         {/* Center Side: Logo Placement with Forced Native CSS Inversion */}
-        <div className="flex justify-start md:justify-center items-center z-10">
+        <div className="flex justify-start md:justify-center items-center z-100">
           <img 
             src="/cutting-edge-logo.png" 
             alt="Cuttingedge Man Logo" 
