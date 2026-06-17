@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, MapPin, Award, Scissors } from "lucide-react";
 import { toast } from "react-toastify";
+import bgImg from '../assets/cutting-edge-bg.jpg'
 
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function HeroSection() {
   return (
     <div 
       className="relative min-h-screen bg-black text-white overflow-hidden flex flex-col justify-between bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/cutting-edge-bg.svg')" }}
+      style={{ backgroundImage: `url(${bgImg})`}}
     >
       {/* Background darken overlays */}
       <div className="absolute inset-0 bg-black/40 mix-blend-multiply z-0" />
