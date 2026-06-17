@@ -72,9 +72,6 @@ export default function ContestRules() {
         {/* Left Side: Completely Stationary Typography */}
         <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-24">
           <div className="space-y-1 md:space-y-2">
-            <p className="font-body italic text-[#183634] font-semibold text-lg md:text-xl tracking-wider">
-              03 / Directives Ledger
-            </p>
             <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-[#183634] leading-none">
               Know Before <br />
               You Register
