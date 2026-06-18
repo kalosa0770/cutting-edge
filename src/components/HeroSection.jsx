@@ -56,7 +56,7 @@ export default function HeroSection() {
             src="/cutting-edge-logo.png" 
             alt="Cuttingedge Man Logo" 
             style={{ filter: 'invert(1) brightness(2)' }}
-            className="h-16 md:h-22 w-auto object-contain drop-shadow-[0_4px_8px_rgba(255,255,255,0.15)]"
+            className="h-12 md:h-24 w-auto object-contain drop-shadow-[0_4px_8px_rgba(255,255,255,0.15)]"
           />
         </div>
 
@@ -151,19 +151,7 @@ export default function HeroSection() {
       {/* ========================================================= */}
       <main className="flex-1 flex items-center justify-center px-6 py-16 md:py-24 z-10">
         <div className="max-w-4xl mx-auto text-center space-y-10">
-          
-          {/* Emblem Badge Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-block mx-auto"
-          >
-            <div className="px-5 py-2 bg-black/40 backdrop-blur-sm text-white/90 tracking-widest text-xs font-bold uppercase flex items-center gap-3 rounded-sm">
-              <Scissors size={12} className="rotate-90 text-white" />
-              Cuttingedge Barbershop Presents
-            </div>
-          </motion.div>
+          <img src="./9009.png" className="h-18 md:h-24 w-auto object-contain items-center justify-center mx-auto" />
 
           {/* Core Typography Headers */}
           <div className="space-y-4">
