@@ -52,7 +52,7 @@ export default function RegisterCTA({ onRegisterClick }) {
 
         {/* Brand Headline & Copy Stack */}
         <div className="space-y-3">
-          <h2 className="font-display text-4xl sm:text-5xl  font-black uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-display text-5xl sm:text-4xl md:text-7xl tracking-normal text-white uppercase">
             Are You Ready <br />
             To Compete?
           </h2>
@@ -66,7 +66,7 @@ export default function RegisterCTA({ onRegisterClick }) {
         <div className="pt-4">
           <button
             onClick={onRegisterClick}
-            className="px-10 py-4 bg-[#faf6e4] text-[#183634] font-display font-black tracking-widest text-xs uppercase hover:bg-white active:scale-[0.97] transition-all duration-200 shadow-2xl cursor-pointer select-none border border-transparent"
+            className="px-10 py-4 bg-[#faf6e4] text-[#183634] font-body font-black tracking-widest text-xs uppercase hover:bg-white active:scale-[0.97] transition-all duration-200 shadow-2xl cursor-pointer select-none border border-transparent"
           >
             Register Here &rarr;
           </button>

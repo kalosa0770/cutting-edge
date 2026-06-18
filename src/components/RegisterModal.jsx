@@ -58,7 +58,7 @@ export default function RegisterModal({ isOpen, onClose }) {
               </button>
 
               <div className="space-y-1 relative z-10 pr-6">
-                <h3 className="font-display text-2xl md:text-3xl font-black uppercase tracking-tight text-white flex items-center gap-2">
+                <h3 className="font-display text-2xl md:text-3xl uppercase tracking-wide text-white flex items-center gap-2">
                   <Scissors size={18} className="text-white/60 rotate-90" /> Register Details
                 </h3>
                 <p className="font-body text-sm text-white/60 leading-relaxed">

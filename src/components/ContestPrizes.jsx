@@ -39,7 +39,7 @@ export default function ContestPrizes() {
         {/* UPPER BLOCK: HEADER INTRO COPY                            */}
         {/* ========================================================= */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight leading-none">
+          <h2 className="font-display text-5xl sm:text-4xl md:text-7xl tracking-normal text-white uppercase">
             Compete for <br />
             Real Rewards
           </h2>
@@ -63,7 +63,7 @@ export default function ContestPrizes() {
           {/* 🥈 2nd Place Card (Left side on desktop, stacked appropriately on mobile) */}
           <motion.div 
             variants={cardVariants}
-            className="bg-neutral-900/30 border border-white/10 p-8 flex flex-col justify-between order-2 md:order-1 min-h-[340px] rounded-xs group hover:border-white/30 transition-all duration-300 shadow-xl relative"
+            className="bg-neutral-900/30 border border-white/10 p-8 flex flex-col justify-between order-2 md:order-1 min-h-[340px] group hover:border-white/30 transition-all duration-300 shadow-xl relative"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -71,7 +71,7 @@ export default function ContestPrizes() {
                 <Medal className="w-6 h-6 text-neutral-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="space-y-1 items-center justify-center text-center">
-                <p className="font-display text-xl lg:text-2xl font-black tracking-tight text-white">ZMW 5,000</p>
+                <p className="font-body text-xl lg:text-2xl font-black tracking-tight text-white">ZMW 5,000</p>
                 <p className="font-body italic text-xs uppercase tracking-widest text-neutral-400 font-semibold">Zambian Kwacha</p>
               </div>
               <p className="font-body text-sm lg:text-sm text-center text-white/60 leading-relaxed pt-2">
@@ -84,7 +84,7 @@ export default function ContestPrizes() {
           {/* 🏆 1st Place Champion Card (Centered, scaled up, elevated layout depth) */}
           <motion.div 
             variants={cardVariants}
-            className="bg-gradient-to-b from-[#183634]/40 to-neutral-900/40 border-2 border-[#183634] p-8 flex flex-col justify-between order-1 md:order-2 min-h-[380px] md:scale-105 z-20 rounded-xs group shadow-2xl relative"
+            className="bg-gradient-to-b from-[#183634]/40 to-neutral-900/40 border-2 border-[#183634] p-8 flex flex-col justify-between order-1 md:order-2 min-h-[380px] md:scale-105 z-20 group shadow-2xl relative"
           >
             {/* Visual Callout Crown Badge */}
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#183634] text-[#faf6e4] font-body font-black text-[10px] tracking-widest uppercase rounded-sm border border-[#faf6e4]/10 shadow-md">
@@ -97,7 +97,7 @@ export default function ContestPrizes() {
                 <Trophy className="w-7 h-7 text-yellow-500 group-hover:scale-110 transition-transform animate-pulse" />
               </div>
               <div className="space-y-1 items-center justify-center text-center">
-                <p className="font-display text-xl lg:text-2xl font-black tracking-tight text-white leading-none">ZMW 10,000</p>
+                <p className="font-body text-xl lg:text-2xl font-black tracking-tight text-white leading-none">ZMW 10,000</p>
                 <p className="font-body italic text-xs uppercase tracking-widest text-yellow-500 font-semibold">Zambian Kwacha</p>
               </div>
               <p className="font-body text-sm text-center text-white/80 leading-relaxed pt-2">
@@ -110,22 +110,22 @@ export default function ContestPrizes() {
           {/* 🥉 3rd Place Card (Right side on desktop, stacked on mobile) */}
           <motion.div 
             variants={cardVariants}
-            className="bg-neutral-900/30 border border-white/10 p-8 flex flex-col justify-between order-3 min-h-[340px] rounded-xs group hover:border-white/30 transition-all duration-300 shadow-xl relative"
+            className="bg-neutral-900/30 border border-white/10 p-8 flex flex-col justify-between order-3 min-h-[340px] group hover:border-white/30 transition-all duration-300 shadow-xl relative"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="font-body text-xs font-bold tracking-widest text-white/40 uppercase">3rd Place</span>
-                <Award className="w-6 h-6 text-amber-700 group-hover:scale-110 transition-transform" />
+                <Award className="w-6 h-6 text-neutral-400 group-hover:scale-110 transition-transform" />
               </div>
               <div className="space-y-1 items-center justify-center text-center">
-                <p className="font-display text-xl lg:text-2xl font-black tracking-tight text-white">ZMW 3,000</p>
-                <p className="font-body italic text-xs uppercase tracking-widest text-amber-700 font-semibold">Zambian Kwacha</p>
+                <p className="font-body text-xl lg:text-2xl font-black tracking-tight text-white">ZMW 3,000</p>
+                <p className="font-body italic text-xs uppercase tracking-widest text-neutral-400 font-semibold">Zambian Kwacha</p>
               </div>
               <p className="font-body text-center text-sm lg:lg text-white/60 leading-relaxed pt-2">
                 Third place cash prize + Cuttingedge Merit Certificate
               </p>
             </div>
-            <div className="w-full h-[3px] bg-amber-700/20 mt-6 group-hover:bg-amber-700 transition-colors" />
+            <div className="w-full h-[3px] bg-neutral-200/20 mt-6 group-hover:bg-neutral-400 transition-colors" />
           </motion.div>
 
         </motion.div>

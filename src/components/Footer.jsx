@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col sm:flex-row items-center justify-between gap-6 font-body text-xs md:text-sm tracking-wider uppercase font-medium">
           {/* Left Side: Branding Info */}
           <div className="text-center sm:text-left space-y-1">
-            <p className="font-display font-black text-sm tracking-widest">© 2026 Cuttingedge Man</p>
+            <p className="font-display font-black text-sm tracking-widest">© 2026 Cuttingedge Contest</p>
             <p className="text-[#000000]/50 normal-case font-normal italic">Where skill meets steel.</p>
           </div>
   

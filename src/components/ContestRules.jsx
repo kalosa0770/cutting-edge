@@ -72,7 +72,7 @@ export default function ContestRules() {
         {/* Left Side: Completely Stationary Typography */}
         <div className="lg:col-span-5 space-y-4 md:space-y-6 lg:sticky lg:top-24">
           <div className="space-y-1 md:space-y-2">
-            <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight text-[#183634] leading-none">
+            <h2 className="font-display text-5xl sm:text-4xl md:text-7xl tracking-normal text-[#183634] uppercase">
               Know Before <br />
               You Register
             </h2>
@@ -83,7 +83,7 @@ export default function ContestRules() {
 
           {/* Static Progressive Indicators Hud (Clickable tabs to quickly flip through if users prefer manual interaction) */}
           <div className="flex items-center gap-3 pt-4 border-t border-[#183634]/10 max-w-xs">
-            <span className="font-display font-black text-sm text-[#183634]">
+            <span className="font-body font-black text-sm text-[#183634]">
               {rules[activeIndex].num}
             </span>
             <div className="flex items-center gap-1.5 flex-1 justify-center">
@@ -132,7 +132,7 @@ export default function ContestRules() {
 
                     {/* Narrative Body Elements */}
                     <div className="space-y-1.5 flex-1 min-w-0">
-                      <h3 className="font-display text-lg md:text-xl font-bold uppercase tracking-tight text-[#183634]">
+                      <h3 className="font-body text-lg md:text-xl font-bold  tracking-tight text-[#183634]">
                         {rule.title}
                       </h3>
                       <p className="font-body text-sm sm:text-base md:text-lg text-[#000000]/80 leading-relaxed text-justify">

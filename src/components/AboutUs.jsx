@@ -61,9 +61,9 @@ export default function AboutUs() {
             className="lg:col-span-7 space-y-4 md:space-y-6 w-full"
           >
             <div className="space-y-1 md:space-y-2">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-black tracking-tight text-[#183634] leading-tight uppercase">
-                Prove You are The <br />
-                Sharpest In Zambia
+              <h2 className="font-display text-5xl sm:text-4xl md:text-7xl tracking-normal text-[#183634] uppercase">
+                Are You Worthy of The 
+                Prize?
               </h2>
             </div>
 
@@ -113,7 +113,7 @@ export default function AboutUs() {
             <div className="w-6 h-6 sm:w-8 sm:h-8 text-[#183634] flex items-center justify-center mb-1 bg-[#183634]/5 rounded-full">
               <Scissors className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
-            <p className="font-display text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">3</p>
+            <p className="font-body text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">3</p>
             <p className="font-body text-[9px] sm:text-xs md:text-sm uppercase tracking-tight sm:tracking-widest text-[#000000]/60 font-semibold leading-tight mt-1">
               Categories
             </p>
@@ -124,7 +124,7 @@ export default function AboutUs() {
             <div className="w-6 h-6 sm:w-8 sm:h-8 text-[#183634] flex items-center justify-center mb-1 bg-[#183634]/5 rounded-full">
               <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
-            <p className="font-display text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">3</p>
+            <p className="font-body text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">3</p>
             <p className="font-body text-[9px] sm:text-xs md:text-sm uppercase tracking-tight sm:tracking-widest text-[#000000]/60 font-semibold leading-tight mt-1">
               Prizes
             </p>
@@ -135,7 +135,7 @@ export default function AboutUs() {
             <div className="w-6 h-6 sm:w-8 sm:h-8 text-[#183634] flex items-center justify-center mb-1 bg-[#183634]/5 rounded-full">
               <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </div>
-            <p className="font-display text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">1</p>
+            <p className="font-body text-lg sm:text-3xl md:text-5xl font-black text-[#183634] leading-none">1</p>
             <p className="font-body text-[9px] sm:text-xs md:text-sm uppercase tracking-tight sm:tracking-widest text-[#000000]/60 font-semibold leading-tight mt-1">
               Title
             </p>
@@ -150,7 +150,7 @@ export default function AboutUs() {
             <div className="w-5 h-5 sm:w-8 sm:h-8 text-[#faf6e4] flex items-center justify-center mb-1 bg-white/10 rounded-full group-hover:scale-105 transition-transform">
               <Trophy className="w-3 h-3 sm:w-4 sm:h-4" />
             </div>
-            <p className="font-display text-sm sm:text-2xl md:text-4xl font-black text-white tracking-tight leading-none">
+            <p className="font-font-body text-sm sm:text-2xl md:text-4xl font-black text-white tracking-tight leading-none">
               ZMW 18k
             </p>
             <p className="font-body text-[8px] sm:text-[10px] md:text-xs uppercase tracking-wider text-[#faf6e4]/90 font-bold mt-1.5 hidden sm:block">

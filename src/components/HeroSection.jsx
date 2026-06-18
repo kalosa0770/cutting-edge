@@ -24,8 +24,8 @@ export default function HeroSection() {
       style={{ backgroundImage: `url(${bgImg})`}}
     >
       {/* Background darken overlays */}
-      <div className="absolute inset-0 bg-black/40 mix-blend-multiply z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-0" />
+      <div className="absolute inset-0 bg-vintage-green/40 mix-blend-multiply z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-vintage-green/40 to-vintage-green z-0" />
       
       {/* ⏳ ENHANCED MULTIPLIED LARGE SANDY TEXTURE LAYER */}
       <div className="absolute inset-0 opacity-75 mix-blend-multiply pointer-events-none z-10">
@@ -53,9 +53,8 @@ export default function HeroSection() {
         {/* Center Side: Logo Placement with Forced Native CSS Inversion */}
         <div className="flex justify-start md:justify-center items-center z-100">
           <img 
-            src="/cutting-edge-logo.png" 
+            src="/logo.svg" 
             alt="Cuttingedge Man Logo" 
-            style={{ filter: 'invert(1) brightness(2)' }}
             className="h-12 md:h-24 w-auto object-contain drop-shadow-[0_4px_8px_rgba(255,255,255,0.15)]"
           />
         </div>
@@ -151,7 +150,19 @@ export default function HeroSection() {
       {/* ========================================================= */}
       <main className="flex-1 flex items-center justify-center px-6 py-16 md:py-24 z-10">
         <div className="max-w-4xl mx-auto text-center space-y-10">
-          <img src="./9009.png" className="h-18 md:h-24 w-auto object-contain items-center justify-center mx-auto" />
+          
+          {/* Emblem Badge Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-block mx-auto"
+          >
+            <div className="px-5 py-2 bg-black/10 backdrop-blur-sm text-white/90 tracking-widest text-[10px] font-bold uppercase flex items-center gap-3">
+              <Scissors size={12} className="rotate-90 text-white" />
+              Cuttingedge Barbershop Presents
+            </div>
+          </motion.div>
 
           {/* Core Typography Headers */}
           <div className="space-y-4">
@@ -159,10 +170,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.99 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.3 }}
-              className="font-display text-4xl sm:text-5xl md:text-6xl font-black tracking-tight uppercase text-white leading-none drop-shadow-lg"
+              className="font-display text-6xl sm:text-5xl md:text-8xl  tracking-widest uppercase text-white leading-none drop-shadow-lg"
             >
-              Edge Cutting <br />
-              <span className="font-black">Contest</span>
+              {/* Edge Cutting <br />
+              <span >Contest</span> */}
+              <img src="./CEC.svg" className="w-full h-48 object-contain  items-center justify-center mx-auto" />
             </motion.h1>
             
             {/* Elegant Vintage Flourish Element */}

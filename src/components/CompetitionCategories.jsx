@@ -68,7 +68,7 @@ export default function CompetitionCategories() {
         {/* ========================================================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-5 space-y-2">
-            <h2 className="font-display text-4xl md:text-5xl font-black uppercase tracking-tight leading-none">
+            <h2 className="font-display text-5xl sm:text-4xl md:text-7xl tracking-normal text-white uppercase">
               What Are You <br />
               Competing In?
             </h2>
@@ -112,7 +112,7 @@ export default function CompetitionCategories() {
                   </div>
                 </div>
                 
-                <h3 className="font-display text-sm font-bold tracking-widest text-vintage-screem group-hover:text-white/90">
+                <h3 className="font-body text-sm font-bold tracking-widest text-vintage-screem group-hover:text-white/90">
                   {item.title}
                 </h3>
               </div>
